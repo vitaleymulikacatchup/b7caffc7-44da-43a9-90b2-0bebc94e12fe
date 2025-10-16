@@ -74,35 +74,31 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel - Luxury & Comfort",
-  description: "Experience luxury and comfort at our hotel in the heart of the city.",
+  title: "HotelName - Luxury in the Heart of the City",
+  description: "Experience the finest in hospitality and comfort at HotelName, located in the heart of the city.",
   openGraph: {
-    title: "Hotel - Luxury & Comfort",
-    description: "Experience luxury and comfort at our hotel in the heart of the city.",
-    siteName: "Hotel",
-    images: [{
-      url: "https://images.pexels.com/photos/189295/pexels-photo-189295.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      alt: "Elegant lobby with comfortable sofas, large windows, and natural light enhancing the indoor ambiance."
-    }],
+    title: "HotelName - Luxury in the Heart of the City",
+    description: "Experience the finest in hospitality and comfort.",
+    url: "",
+    siteName: "HotelName",
+    images: [{ url: "https://images.pexels.com/photos/6010421/pexels-photo-6010421.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Elegant white Mediterranean building with ornate balconies under a clear blue sky." }],
+    type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hotel - Luxury & Comfort",
-    description: "Experience luxury and comfort at our hotel in the heart of the city.",
-    images: ["https://images.pexels.com/photos/189295/pexels-photo-189295.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"],
+    title: "HotelName - Luxury in the Heart of the City",
+    description: "Experience the finest in hospitality and comfort.",
+    images: ["https://images.pexels.com/photos/6010421/pexels-photo-6010421.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"]
   },
+  robots: { index: true, follow: true }
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body
-        className={`${interTight.variable} ${playfairDisplay.variable} ${roboto.variable} ${openSans.variable} ${lato.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${ubuntu.variable} ${nunito.variable} antialiased`}
-      >
+      <body className={`${interTight.variable} ${playfairDisplay.variable} ${roboto.variable} ${openSans.variable} ${lato.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${ubuntu.variable} ${nunito.variable} antialiased`}>
         {children}
       
         <script

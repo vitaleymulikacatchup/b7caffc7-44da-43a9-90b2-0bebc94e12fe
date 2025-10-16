@@ -1,16 +1,16 @@
 "use client";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import NavbarStyleApple from '@/components/navbar/NavbarStyleApple';
+import NavbarStyleMinimal from '@/components/navbar/NavbarStyleMinimal';
 import HeroBillboard from '@/components/sections/hero/HeroBillboard';
-import TextSplitAbout from '@/components/sections/about/TextSplitAbout';
-import ContactSplit from '@/components/sections/contact/ContactSplit';
-import FooterBase from '@/components/sections/footer/FooterBase';
+import SplitAbout from '@/components/sections/about/SplitAbout';
+import FeatureCardThree from '@/components/sections/feature/FeatureCardThree';
+import ContactCenter from '@/components/sections/contact/ContactCenter';
+import FooterBaseReveal from '@/components/sections/footer/FooterBaseReveal';
 
-const assetMap: { id: string; url: string; alt?: string }[] = /* provided JSON array */
-[
-  { "id": "hero-image", "url": "https://images.pexels.com/photos/189295/pexels-photo-189295.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", "alt": "Elegant lobby with comfortable sofas, large windows, and natural light enhancing the indoor ambiance." },
-  { "id": "contact-image", "url": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", "alt": "Cozy and modern hotel bedroom interior with elegant decor and soft lighting." },
-  { "id": "footer-logo", "url": "https://images.pexels.com/photos/11432738/pexels-photo-11432738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", "alt": "Modern hotel building exterior in Stuttgart, Germany, during daytime. Urban architecture and design." }
+const assetMap = [
+  { id: "hero-image", url: "https://images.pexels.com/photos/6010421/pexels-photo-6010421.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Elegant white Mediterranean building with ornate balconies under a clear blue sky." },
+  { id: "about-image", url: "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "A luxurious hotel lobby featuring elegant architecture, rich decor, and comfortable seating under a stained glass ceiling." },
+  { id: "contact-media", url: "https://images.pexels.com/photos/8484840/pexels-photo-8484840.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", alt: "Experience serene luxury at a Dubai resort with traditional architecture and tranquil pool." }
 ];
 
 export default function Home() {
@@ -21,61 +21,63 @@ export default function Home() {
       borderRadius="rounded"
     >
       <div id="nav" data-section="nav">
-        <NavbarStyleApple
-          navItems={[
-            { name: "Home", id: "home" },
-            { name: "About", id: "about" },
-            { name: "Contact", id: "contact" },
-          ]}
-          brandName="Hotel"
-        />
+        <NavbarStyleMinimal brandName="HotelName" />
       </div>
       <div id="hero" data-section="hero" className="scroll-mt-24">
         <div className="mx-auto px-4 md:px-6">
           <HeroBillboard
-            title="Welcome to Our Hotel"
+            title="Welcome to HotelName"
             description="Experience luxury and comfort in the heart of the city."
-            imageSrc="https://images.pexels.com/photos/189295/pexels-photo-189295.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            buttons={[{ text: "Book Now", href: "contact" }]}
-            className="bg-blue-50 text-gray-800"
+            imageSrc="https://images.pexels.com/photos/6010421/pexels-photo-6010421.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            buttons={[
+              { text: "Explore Rooms", href: "rooms" },
+              { text: "Contact Us", href: "contact" }
+            ]}
+            className="bg-blue-50 text-blue-900"
           />
         </div>
       </div>
       <div id="about" data-section="about" className="scroll-mt-24">
         <div className="mx-auto px-4 md:px-6">
-          <TextSplitAbout
-            title="About Us"
-            description={[
-              "Our hotel offers world-class amenities and impeccable service.",
-              "Located at the heart of downtown, we ensure a memorable stay."
+          <SplitAbout
+            bulletPoints={[
+              { title: "Exceptional Service", description: "Our staff provides top-notch service to ensure a delightful stay.", icon: "Award" },
+              { title: "Central Location", description: "Conveniently located near major attractions and transit options.", icon: "MapPin" }
             ]}
-            className="bg-blue-50 text-gray-800"
+            imageSrc="https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            className="bg-blue-50 text-blue-900"
+          />
+        </div>
+      </div>
+      <div id="feature" data-section="feature" className="scroll-mt-24">
+        <div className="mx-auto px-4 md:px-6">
+          <FeatureCardThree
+            features={[
+              { id: "01", title: "Elegant Rooms", description: "Enjoy stunning views and luxurious accommodations.", imageSrc: "https://images.pexels.com/photos/6010421/pexels-photo-6010421.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" }
+            ]}
+            className="bg-blue-50 text-blue-900"
           />
         </div>
       </div>
       <div id="contact" data-section="contact" className="scroll-mt-24">
         <div className="mx-auto px-4 md:px-6">
-          <ContactSplit
-            tag="Get in Touch"
-            title="Contact Us"
-            description="Reach out to us for reservations and inquiries."
-            imageSrc="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            className="bg-blue-50 text-gray-800"
+          <ContactCenter
+            tag="Contact Us"
+            title="Get in Touch"
+            description="Have questions or need assistance? Our team is here to help."
+            imageSrc="https://images.pexels.com/photos/8484840/pexels-photo-8484840.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            className="bg-blue-50 text-blue-900"
           />
         </div>
       </div>
       <div id="footer" data-section="footer" className="scroll-mt-24">
         <div className="mx-auto px-4 md:px-6">
-          <FooterBase
+          <FooterBaseReveal
             columns={[
-              { title: "Explore", items: [
-                { label: "Home", href: "home" },
-                { label: "About", href: "about" },
-                { label: "Contact", href: "contact" }
-              ] }
+              { title: "About", items: [ { label: "Our Story", href: "our-story" }, { label: "Careers", href: "careers" } ] },
+              { title: "Services", items: [ { label: "Dining", href: "dining" }, { label: "Spa", href: "spa" } ] }
             ]}
-            logoSrc="https://images.pexels.com/photos/11432738/pexels-photo-11432738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-            copyrightText="© 2025 | Hotel"
+            copyrightText="© 2023 HotelName"
           />
         </div>
       </div>
