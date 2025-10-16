@@ -12,67 +12,56 @@ import {
   Nunito
 } from "next/font/google";
 import "./globals.css";
-
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
-
 const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700", "900"],
 });
-
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
-
 const lato = Lato({
   variable: "--font-lato",
   subsets: ["latin"],
   weight: ["100", "300", "400", "700", "900"],
 });
-
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
 const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
-
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
 export const metadata: Metadata = {
   title: "HotelName - Luxury in the Heart of the City",
   description: "Experience the finest in hospitality and comfort at HotelName, located in the heart of the city.",
@@ -92,7 +81,6 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true }
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode; }>) {
